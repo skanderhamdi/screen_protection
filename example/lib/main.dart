@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:screen_protection/screen_protection.dart';
+import 'package:screen_protection/screen_security_enum.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,34 +17,27 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-  final _screenProtectionPlugin = ScreenProtection();
+  ScreenProtectionState screenProtectionState = ScreenProtectionState.unknown;
+  final screenProtectionPlugin = ScreenProtection();
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      init();
+    });
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
+  Future<void> init() async {
+    late ScreenProtectionState state;
     try {
-      platformVersion =
-          await _screenProtectionPlugin.getPlatformVersion() ?? 'Unknown platform version';
+      state = await screenProtectionPlugin.isScreenSecured();
     } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+      state = ScreenProtectionState.unknown;
     }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
     if (!mounted) return;
-
     setState(() {
-      _platformVersion = platformVersion;
+      screenProtectionState = state;
     });
   }
 
@@ -55,9 +49,30 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
-      ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text('Screen Protection state: ${screenProtectionState.name}\n'),
+              const SizedBox(height: 20),
+              TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25)
+                  ),
+                  onPressed: () async {
+                    print("tapped");
+                    await screenProtectionPlugin.toggleScreenSecurity();
+                    init();
+                    print("end tapped");
+                  },
+                  child: Text("Toggle Screen Protection", style: TextStyle(color: Colors.white))
+              )
+            ]
+          )
+        )
+      )
     );
   }
 }

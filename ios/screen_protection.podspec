@@ -5,10 +5,8 @@
 Pod::Spec.new do |s|
   s.name             = 'screen_protection'
   s.version          = '0.0.1'
-  s.summary          = 'An awesome Flutter plugin to secure your app's screens from Screenshot'
-  s.description      = <<-DESC
-An awesome Flutter plugin to secure your app's screens from Screenshot
-                       DESC
+  s.summary          = 'An awesome Flutter plugin to secure your app screens from Screenshot'
+  s.description      = 'An awesome Flutter plugin to secure your app screens from Screenshot'
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }

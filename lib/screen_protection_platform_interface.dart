@@ -23,7 +23,16 @@ abstract class ScreenProtectionPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  Future<bool?> secureScreen() {
+    throw UnimplementedError('secureScreen() has not been implemented.');
+  }
+  Future<bool?> unsecureScreen() {
+    throw UnimplementedError('unsecureScreen() has not been implemented.');
+  }
+  Future<bool?> isScreenSecured() {
+    throw UnimplementedError('isScreenSecured() has not been implemented.');
+  }
+  Future<bool?> toggleScreenSecurity() {
+    throw UnimplementedError('toggleScreenSecurity() has not been implemented.');
   }
 }

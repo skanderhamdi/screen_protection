@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - screen_protection (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - screen_protection (from `.symlinks/plugins/screen_protection/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  screen_protection:
+    :path: ".symlinks/plugins/screen_protection/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  screen_protection: f94a6e8a06598ea276003a5cf6b4bcd641bd7802
+
+PODFILE CHECKSUM: bfd8cb9c5a07b05028ccd5e7d27153963d4bba14
+
+COCOAPODS: 1.12.0
