@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Flutter Screen Protection'),
         ),
         body: Center(
           child: Column(
@@ -56,18 +56,18 @@ class _MyAppState extends State<MyApp> {
             children: [
               Text('Screen Protection state: ${screenProtectionState.name}\n'),
               const SizedBox(height: 20),
+              const Text('Try making Screenshot or Screen record'),
+              const SizedBox(height: 20),
               TextButton(
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.blue,
                     padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25)
                   ),
                   onPressed: () async {
-                    print("tapped");
                     await screenProtectionPlugin.toggleScreenSecurity();
                     init();
-                    print("end tapped");
                   },
-                  child: Text("Toggle Screen Protection", style: TextStyle(color: Colors.white))
+                  child: const Text("Toggle Screen Protection", style: TextStyle(color: Colors.white))
               )
             ]
           )

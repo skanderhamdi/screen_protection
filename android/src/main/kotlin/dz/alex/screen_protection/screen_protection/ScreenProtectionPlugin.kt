@@ -27,7 +27,6 @@ class ScreenProtectionPlugin: FlutterPlugin, ActivityAware {
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
     activity = binding.activity as FlutterActivity
-    Log.d(TAG, "onAttachedToActivity: channel.setMethodCallHandler")
     channel.setMethodCallHandler { call, result ->
       when(call.method) {
         "secureScreen" -> {
