@@ -9,8 +9,7 @@ An awesome plugin that secures your Flutter app's screen from screenshot &amp; s
 [![Contributions welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 The **Screen Protection Plugin** is a Flutter plugin that provides functionality to control and monitor screen security on both Android and iOS platforms. It allows you to prevent or allow screenshots and screen recording, giving you control over the security of your Flutter app' screen.
-<br>
-<hr>
+___
 
 ## Features
 
@@ -56,8 +55,7 @@ import 'package:screen_protection_plugin/screen_protection_plugin.dart';
 ```dart
 final screenProtectionPlugin = ScreenProtection();
 ```
-<br>
-<hr>
+___
 
 ## Usage
 
@@ -84,8 +82,8 @@ bool? disable = await screenProtectionPlugin.unsecureScreen();
 ```dart
 bool? toggle = await screenProtectionPlugin.toggleScreenSecurity();
 ```
-<br>
-<hr>
+
+___
 
 ## Full usage example
 
@@ -167,9 +165,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 ```
-<br>
-<hr>
-
+___
 ## Contribution
 Contributions are welcome! Feel free to open issues, submit pull requests, or provide feedback.
 
