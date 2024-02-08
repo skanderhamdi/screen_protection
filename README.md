@@ -17,6 +17,6 @@ The **Screen Protection Plugin** is a Flutter plugin that provides functionality
 #### Demonstration for Screenshots and Screen recording prevention
 
 <div style="display:flex; justify-content:start;">
-  <img style="margin-right: 20px" src="https://i.ibb.co/XksqQWq/flutter-screen-protection-screenshot.gif" alt="Screenshot Protection" width="250"/>
+  <img style="margin-right: 50px" src="https://i.ibb.co/XksqQWq/flutter-screen-protection-screenshot.gif" alt="Screenshot Protection" width="250"/>
   <img src="https://i.ibb.co/yBdwLW6/flutter-screen-protection-screen-record.gif" alt="Screen Recording Protection" width="250"/>
 </div>
