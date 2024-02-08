@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
 import 'package:flutter/services.dart';
 import 'package:screen_protection/screen_protection.dart';
 import 'package:screen_protection/screen_security_enum.dart';
@@ -17,15 +16,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
   ScreenProtectionState screenProtectionState = ScreenProtectionState.unknown;
   final screenProtectionPlugin = ScreenProtection();
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      init();
-    });
+    WidgetsBinding.instance.addPostFrameCallback((_) => init());
   }
 
   Future<void> init() async {
