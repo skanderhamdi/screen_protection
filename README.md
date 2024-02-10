@@ -23,7 +23,7 @@ ___
 
 - **Good news! iOS 17 Compatibility:** The plugin continues to offer its functionality even on iOS 17 and above, addressing the reported lack of support in the latest iOS versions.
 
-#### Demonstration for Screenshots and Screen recording prevention
+#### Demonstration for Screenshots and Screen recording prevention for iOS
 
 <div style="display:flex; justify-content:start;">
   <img style="margin-right: 30px" src="https://i.ibb.co/XksqQWq/flutter-screen-protection-screenshot.gif" alt="Screenshot Protection" width="250"/>
