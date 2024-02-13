@@ -36,7 +36,7 @@ To use the **Screen Protection Plugin** in your Flutter project, follow these si
 
 ```yaml
 dependencies:
-  screen_protection_plugin:
+  screen_protection:
     git: 
       url: https://github.com/skanderhamdi/screen_protection.git
       ref: master

@@ -64,30 +64,6 @@ class ScreenProtectionPlugin: FlutterPlugin, ActivityAware {
     channel.setMethodCallHandler(null)
   }
 
-  /*override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
-    channel.setMethodCallHandler(null)
-  }
-  override fun onMethodCall(call: MethodCall, result: Result) {
-    when(call.method) {
-      "secureScreen" -> {
-        secureScreen()
-        result.success(true)
-      }
-      "unsecureScreen" -> {
-        unsecureScreen()
-        result.success(true)
-      }
-      "toggleScreenSecurity" -> {
-        toggleScreenSecurity()
-        result.success(true)
-      }
-      "isScreenSecured" -> {
-        result.success(isScreenSecured())
-      }
-      else -> result.notImplemented()
-    }
-  }*/
-
   fun secureScreen() {
     activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
   }
